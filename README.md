@@ -1,4 +1,6 @@
-# RPack - Resource Package Manager
+# RPack
+
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
 RPack is a Python library for creating, reading, and managing compressed binary resource packages. It provides an efficient way to bundle multiple files into a single compressed archive with integrity verification and virtual file system support.
 
@@ -18,8 +20,6 @@ git clone https://github.com/davidleonstr/rpack.git
 cd rpack
 pip install .
 ```
-
-Or using git + pip to install **rpack** using the link to the repository:
 
 ```bash
 pip install git+https://github.com/davidleonstr/rpack.git
