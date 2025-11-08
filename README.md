@@ -70,7 +70,11 @@ RPack includes a command-line interface for common operations:
 ### Create a Package
 
 ```bash
+# Using folder
 python -m rpack create --input <input_directory> --output <output_file> [OPTIONS]
+
+# Using files
+python -m rpack create -f <input_files_separated_with_space> -o <output_file>
 
 # Short form
 python -m rpack create -i ./resources -o resources.rpack
@@ -80,7 +84,8 @@ python -m rpack create -i ./data -o data.rpack -c lzma -l 9
 ```
 
 **Options:**
-- `--input, -i`: Input folder or file (required)
+- `--files, -f`: Input files
+- `--input, -i`: Input folder or file (Required if no files are given)
 - `--output, -o`: Output .rpack file (required)
 - `--compression, -c`: Compression method: zlib, lzma, none (default: zlib)
 - `--compression-level, -l`: Compression level (default: 6)
@@ -143,7 +148,8 @@ builder.build()
 **Parameters:**
 - `input_path` (str): Path to source directory or file
 - `output_path` (str): Path for the output package file
-- `compression` (CompressionType): Compression method ('zlib', 'lzma', 'none')
+- `compression` (CompressionType): Compression method ('zlib', 'lzma', 'none'),
+- `files` (list): specific files,
 - `verbose` (bool): Enable/disable progress output (default: True)
 
 ### ResourcePack

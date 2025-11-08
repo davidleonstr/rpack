@@ -7,7 +7,13 @@ parser = argparse.ArgumentParser(description='rpack - Resource packaging system'
 subparsers = parser.add_subparsers(dest='command', help='Available commands')
     
 create_parser = subparsers.add_parser('create', help='Create .rpack file')
-create_parser.add_argument('--input', '-i', required=True, help='Input folder or file')
+create_parser.add_argument(
+    '--input', 
+    '-i', 
+    required=False, 
+    default=None, 
+    help='Input folder or file'
+)
 create_parser.add_argument('--output', '-o', required=True, help='Output .rpack file')
 create_parser.add_argument(
     '--compression', 
@@ -21,6 +27,13 @@ create_parser.add_argument(
     '-l', 
     default=6, 
     help='Compression method level (default: 6)'
+)
+create_parser.add_argument(
+    '--files', 
+    '-f', 
+    default=None, 
+    required=False,
+    help='For especific paths: file/path.ext file/path.ext'
 )
 
 list_parser = subparsers.add_parser('list', help='List contents of .rpack')

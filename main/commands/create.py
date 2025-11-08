@@ -1,10 +1,16 @@
 from rpack import RPackBuilder
 
 def rcreate(args):
+    files = None
+    
+    if args.files:
+        files = args.files.split()
+
     builder = RPackBuilder(
-        args.input, 
         args.output, 
-        args.compression, 
+        args.input,
+        args.compression,
+        files,
         level=args.compression_level
     )
     builder.build()
