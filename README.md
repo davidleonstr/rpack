@@ -16,12 +16,6 @@ RPack is a Python library for creating, reading, and managing compressed binary 
 ## Installation
 
 ```bash
-git clone https://github.com/davidleonstr/rpack.git
-cd rpack
-pip install .
-```
-
-```bash
 pip install git+https://github.com/davidleonstr/rpack.git
 ```
 
