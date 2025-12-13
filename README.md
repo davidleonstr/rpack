@@ -1,6 +1,7 @@
 # RPack
 
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 
 RPack is a Python library for creating, reading, and managing compressed binary resource packages. It provides an efficient way to bundle multiple files into a single compressed archive with integrity verification and virtual file system support.
 
