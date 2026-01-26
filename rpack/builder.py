@@ -136,7 +136,7 @@ class RPackBuilder:
 
         Returns:
             list: A sorted list of tuples (Path, virtual_path) representing files to be packed
-                  and their virtual paths in the archive.
+                and their virtual paths in the archive.
         """
         if self.specific_files:
             # Use specific files provided
@@ -182,10 +182,12 @@ class RPackBuilder:
             return [(self.input_path, rel_path)]
 
         files = []
+        
         for item in self.input_path.rglob('*'):
             if item.is_file():
-                rel_path = VirtualFS.normalize_path(str(item.relative_to(self.input_path)))
-                files.append((item, rel_path))
+                rel_path = item.relative_to(self.input_path)
+                virtual_path = VirtualFS.normalize_path(str(self.input_path / rel_path))
+                files.append((item, virtual_path))
         
         return sorted(files, key=lambda x: x[1])
 
